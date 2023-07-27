@@ -23,7 +23,7 @@ map({
 
     -- c-s = :%s/
     { 'n', '<c-h>',       ':<c-u>%s//gc<left><left><left>', { noremap = true } },
-    { 'v', '<c-h>',             ':s/\\v//gc<left><left><left><left>', { noremap = true } },
+    { 'v', '<c-h>',       ':s/\\v//gc<left><left><left><left>', { noremap = true } },
 
     -- VISUAL SELECT模式 s-tab tab左右缩进
     { 'v', '<s-tab>',     '<gv',     { noremap = true } },
@@ -62,8 +62,6 @@ map({
     -- emacs风格快捷键 清空一行
     { 'n', '<c-u>',       'cc<Esc>', { noremap = true } },
     { 'i', '<c-u>',       '<Esc>cc', { noremap = true } },
-    { 'i', '<c-a>',       '<Esc>I',  { noremap = true } },
-    { 'i', '<c-e>',       '<Esc>A',  { noremap = true } },
 
     -- alt + 上 下移动行
     { 'n', '<m-up>',      ':m .-2<cr>',       { noremap = true, silent = true } },
@@ -88,17 +86,16 @@ map({
     { 'n', 'so',          ':only<cr>',        { noremap = true } },
     { 'n', 's<Left>',     '<c-w>h',           { noremap = true } },
     { 'n', 's<Right>',    '<c-w>l',           { noremap = true } },
+    { 'n', 's=',          '<c-w>=',           { noremap = true } },
     { 'n', 's<Up>',       '<c-w>k',           { noremap = true } },
     { 'n', 's<Down>',     '<c-w>j',           { noremap = true } },
-    { 'n', '<c-Space>',   '<c-w>w',           { noremap = true } },
-    { 'n', 's=',          '<c-w>=',           { noremap = true } },
     { 'n', '<m-.>',       "winnr() <= winnr('$') - winnr() ? '<c-w>10>' : '<c-w>10<'", { noremap = true, expr = true } },
     { 'n', '<m-,>',       "winnr() <= winnr('$') - winnr() ? '<c-w>10<' : '<c-w>10>'", { noremap = true, expr = true } },
 
     -- buffers
-    { 'n', 'W',           ':bw<cr>',          { noremap = true, silent = true } },
+    { 'n', 'C',           ':bw<cr>',          { noremap = true, silent = true } },
     { 'n', 'ss',          ':bn<cr>',          { noremap = true, silent = true } },
-    { 'n', '<m-h>',    ':bp<cr>',          { noremap = true, silent = true } },
+    { 'n', '<m-h>',       ':bp<cr>',          { noremap = true, silent = true } },
     { 'n', '<m-l>',   ':bn<cr>',          { noremap = true, silent = true } },
     { 'v', '<m-h>',    '<esc>:bp<cr>',     { noremap = true, silent = true } },
     { 'v', '<m-l>',   '<esc>:bn<cr>',     { noremap = true, silent = true } },
